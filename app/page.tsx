@@ -74,6 +74,11 @@ const Home = async () => {
         <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
           Agendamentos
         </h2>
+        {confirmedBookings.length === 0 && (
+          <p className="text-sm text-gray-400">
+            Nenhum agendamento confirmado.
+          </p>
+        )}
         <div className="flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {confirmedBookings.map((booking, index) => (
             <BookingItem key={index} booking={booking} />
