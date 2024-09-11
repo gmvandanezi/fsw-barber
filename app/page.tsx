@@ -101,7 +101,10 @@ const Home = async () => {
         )}
         <div className="flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {confirmedBookings.map((booking, index) => (
-            <BookingItem key={index} booking={booking} />
+            <BookingItem
+              key={index}
+              booking={JSON.parse(JSON.stringify(booking))}
+            />
           ))}
         </div>
         <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
